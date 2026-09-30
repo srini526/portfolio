@@ -1,8 +1,8 @@
-// Knowledge base for the RAG playground. Every chunk comes from Srini's resume / portfolio content.
+// Knowledge base for the RAG playground. Every chunk comes from Srinivas's resume / portfolio content.
 // `tags` are extra search words (they are not shown to the visitor).
 export const chunks = [
   { id: 'summary', src: 'Resume · Summary', tags: 'build built develop developed about who summary overview software backend experience',
-    text: 'Srini is a Computer Science graduate with hands-on experience developing software applications, backend services and AI/ML solutions using Python, Java, Flask, REST APIs and TensorFlow.' },
+    text: 'Srinivas is a Computer Science graduate with hands-on experience developing software applications, backend services and AI/ML solutions using Python, Java, Flask, REST APIs and TensorFlow.' },
   { id: 'rag0', src: 'Project · RAG Assistant', tags: 'build built rag project overview assistant teaching lecture llm',
     text: 'The RAG-Based AI Teaching Assistant transcribes lecture video with Whisper Large-v3, embeds chunks with BGE-M3 via Ollama, retrieves them semantically and answers with Llama 3.1 via Groq.' },
   { id: 'rag1', src: 'Resume · RAG Assistant', tags: 'rag project build built llm groq',
@@ -34,11 +34,11 @@ export const chunks = [
 ]
 
 export const suggestions = [
-  'What does Srini build?', 'Tell me about the RAG project', 'MRI project accuracy?',
+  'What does Srinivas build?', 'Tell me about the RAG project', 'MRI project accuracy?',
   'Which skills does he have?', 'Internship experience', 'Education',
 ]
 
-const STOP = new Set('a an the is are was were be to of in on for and or with what whats which who how do does did tell me about his he him srini srinivas kanagare can you it its at as by from this that has have any there give show please'.split(' '))
+const STOP = new Set('a an the is are was were be to of in on for and or with what whats which who how do does did tell me about his he him srinivas kanagare can you it its at as by from this that has have any there give show please'.split(' '))
 const stem = (w) => (w.length > 3 && w.endsWith('s') && !w.endsWith('ss') ? w.slice(0, -1) : w)
 export const tokenize = (s) => s.toLowerCase().replace(/[^a-z0-9.+#\s-]/g, ' ').split(/\s+/).filter((w) => w && !STOP.has(w)).map(stem)
 
@@ -55,7 +55,7 @@ export function retrieve(query) {
   return scored.filter((c) => c.hits === scored[0].hits).slice(0, 3)
 }
 
-export const fallback = "I couldn't find that in Srini's resume. Try asking about his projects, skills, education or internship."
+export const fallback = "I couldn't find that in Srinivas's resume. Try asking about his projects, skills, education or internship."
 
 
 // Top-k retrieval used by the live API (unlike retrieve(), it does not only return ties).

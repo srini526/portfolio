@@ -100,13 +100,13 @@ export default function RAGPlayground() {
     <section className="rag-pg" aria-label="Live RAG playground">
       <header className="pg-head">
         <span className={`dot ${live.on ? '' : 'off'}`} /> rag-playground
-        <em>{live.on ? `live · ${live.model} via Groq · grounded in Srini's resume` : "demo mode · keyword retrieval over Srini's resume · no LLM call"}</em>
+        <em>{live.on ? `live · ${live.model} via Groq · grounded in Srinivas's resume` : "demo mode · keyword retrieval over Srinivas's resume · no LLM call"}</em>
       </header>
       <ol className="pg-stages" aria-label="Pipeline stages">
         {STAGES.map((s, i) => <li key={s} className={i < stage ? 'done' : i === stage ? 'active' : ''}>{s}</li>)}
       </ol>
       <div className="pg-log" ref={log} aria-busy={streaming}>
-        <p className="msg bot"><span>Ask about Srini's projects, skills, education or internship. Answers are retrieved from his resume.</span></p>
+        <p className="msg bot"><span>Ask about Srinivas's projects, skills, education or internship. Answers are retrieved from his resume.</span></p>
         {turn && (
           <>
             <p className="msg me"><span>{turn.question}</span></p>
@@ -127,7 +127,7 @@ export default function RAGPlayground() {
         {suggestions.map((s) => <li key={s}><button type="button" onClick={() => ask(s)}>{s}</button></li>)}
       </ul>
       <form className="pg-form" onSubmit={(e) => { e.preventDefault(); streaming ? stop() : ask(q) }}>
-        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Ask about Srini…" aria-label="Ask a question about Srini" maxLength={MAX_Q} />
+        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Ask about Srinivas…" aria-label="Ask a question about Srinivas" maxLength={MAX_Q} />
         <button className="btn primary" type="submit" aria-label={streaming ? 'Stop answer' : 'Send question'}>{streaming ? <Square size={14} /> : <Send size={15} />}</button>
       </form>
     </section>

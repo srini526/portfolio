@@ -13,7 +13,7 @@ export default function Navbar({ onCommand }) {
   return (
     <header className="nav-wrap">
       <nav className="nav" aria-label="Main">
-        <a className="brand" href="#home">SRINI</a>
+        <a className="brand" href="#home">SRINIVAS</a>
         <ul className="nav-links">{links.map(([l, id]) => <li key={id}><a href={`#${id}`} className={active === id ? 'active' : ''} aria-current={active === id ? 'true' : undefined}>{l}</a></li>)}</ul>
         <button className="kbd" onClick={onCommand} aria-label="Open command center"><Command size={14} /><span className="kbd-t">{mac ? '⌘K' : 'Ctrl K'}</span></button>
         <a className="nav-resume" href={profile.resume} target="_blank" rel="noopener"><FileText size={14} /><span>Resume</span></a>

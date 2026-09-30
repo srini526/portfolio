@@ -20,7 +20,7 @@ export default function Hero() {
       <div className="hero-r">
         <figure className="portrait">
           <img src="/images/srini.jpg" width="600" height="900" alt="Portrait of Srinivas Kanagare J" />
-          <figcaption><strong>{profile.name}</strong><span>“Srini” · AI / ML Developer</span></figcaption>
+          <figcaption><strong>{profile.name}</strong><span>“Srinivas” · AI / ML Developer</span></figcaption>
         </figure>
         <div className="map-card"><RAGPlayground /></div>
       </div>

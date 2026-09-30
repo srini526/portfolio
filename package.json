@@ -1,4 +1,4 @@
-{"name":"srini-portfolio","private":true,"version":"1.0.0","type":"module",
+{"name":"srinivas-portfolio","private":true,"version":"1.0.0","type":"module",
 "scripts":{"dev":"vite","seo":"node scripts/seo.mjs","prebuild":"node scripts/seo.mjs","build":"vite build","preview":"vite preview"},
 "dependencies":{"lucide-react":"^0.460.0","react":"^18.3.1","react-dom":"^18.3.1"},
 "devDependencies":{"@vitejs/plugin-react":"^4.3.1","vite":"^5.4.10"}}

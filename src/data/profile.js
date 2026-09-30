@@ -1,5 +1,5 @@
 export const profile = {
-  name: 'Srinivas Kanagare J', short: 'Srini',
+  name: 'Srinivas Kanagare J', short: 'Srinivas',
   email: 'kanagresrinivas@gmail.com',
   github: 'https://github.com/srini526',
   linkedin: 'http://linkedin.com/in/srinivas-kangare/',

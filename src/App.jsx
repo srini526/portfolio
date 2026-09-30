@@ -35,7 +35,7 @@ export default function App() {
     { label: 'View Featured Work', hint: 'Section', run: go('projects') }, { label: 'View RAG Architecture', hint: 'Section', run: go('architecture') },
     { label: 'View Skills', hint: 'Section', run: go('skills') }, { label: 'View Journey', hint: 'Section', run: go('journey') },
     { label: 'View Education', hint: 'Section', run: go('education') }, { label: 'View GitHub', hint: 'External', run: ext(profile.github) },
-    { label: 'View Resume', hint: 'PDF', run: ext(profile.resume) }, { label: 'Contact Srini', hint: 'Section', run: go('contact') },
+    { label: 'View Resume', hint: 'PDF', run: ext(profile.resume) }, { label: 'Contact Srinivas', hint: 'Section', run: go('contact') },
   ]
   return (
     <>
