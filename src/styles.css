@@ -183,3 +183,6 @@ body::after{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;
 
 .pg-head .dot.off{background:#f59e0b;box-shadow:0 0 8px #f59e0b}
 .note{margin-top:8px!important;font:.72rem var(--mono);color:#fbbf24}
+
+.pg-head{white-space:nowrap}
+.pg-head em{min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:.72rem}

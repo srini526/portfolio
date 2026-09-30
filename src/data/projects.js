@@ -32,4 +32,8 @@ export const secondary = [
   { title: 'Blockchain Land Registry System', tag: 'Blockchain', desc: 'A blockchain-based land registry project built on Ethereum.' },
   { title: 'Mock Test Platform', tag: 'Full-Stack', desc: 'A full-stack platform for taking mock tests.' },
   { title: 'Mathogic', tag: 'Frontend', desc: 'A frontend-focused web project.' },
+  { title: 'Blockchain Land Registry System', tag: 'Blockchain', desc: 'A blockchain-based land registry application with Solidity smart contracts and a React frontend. Presented at NCASET 2025.' },
+  { title: 'Mock Test Platform', tag: 'Full-Stack', desc: 'An interactive mock-test platform: React and Tailwind interface, Flask, SQLAlchemy and SQLite backend, and SentenceTransformer-based semantic features.' },
+  { title: 'Mathogic', tag: 'Frontend', desc: 'A landing-page project built with React JSX and Tailwind CSS.' },
 ]
+
