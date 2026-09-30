@@ -4,10 +4,10 @@ export const ragStages = [
   ['07','Semantic Retrieval','Query ↔ chunks'], ['08','Llama 3.1 via Groq','Answer generation'],
 ]
 export const rag = {
-  title: 'RAG-Based AI Teaching Assistant', category: 'RAG / LLM / AI Application',
+  title: 'RAG-Based AI Teaching Assistant', category: 'RAG / LLM / Gen AI',
   desc: 'An AI teaching assistant that converts lecture videos into searchable knowledge and answers questions using Retrieval-Augmented Generation.',
   tech: ['Python','Flask','FFmpeg','Whisper Large-v3','BGE-M3','Ollama','Groq','Llama 3.1','Embeddings','Semantic Retrieval'],
-  points: ['Groq-hosted LLMs generate context-aware answers from educational content.','Semantic embedding and retrieval pipeline built with Ollama matches user queries to relevant content.','Video/audio processed with Whisper and semantic chunking into a searchable knowledge base.','Flask REST APIs stream LLM responses, combining retrieval, context generation and real-time answers.'],
+  points: ['Video → Knowledge: Converted lecture videos to audio with FFmpeg and transcribed them using Whisper Large-v3.','Semantic Retrieval: Created chunks and generated BGE-M3 embeddings, enabling semantic matching between student questions and lecture content.','Context-Aware Generation: Retrieved relevant content and passed it to Llama 3.1 via Groq to generate grounded answers.','AI Application Layer: Built the backend with Flask REST APIs, including streaming responses, conversation history, source references, and retrieval-based context.'],
   query: [['User query','Question embedded with BGE-M3'],['Retrieval','Semantic match against lecture chunks'],['Relevant context','Top-matching transcript segments'],['LLM','Llama 3.1 via Groq'],['Answer','Streamed back through a Flask REST API']],
   study: [
     ['Problem','Lecture videos are hard to search. A student with a specific question has to scrub through recordings to find the relevant explanation.'],

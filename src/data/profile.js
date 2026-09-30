@@ -6,11 +6,11 @@ export const profile = {
   ragRepo: 'https://github.com/srini526/RAG_Based_AI_Teaching_Assistant',
   kaggle: 'https://www.kaggle.com/code/srinivaskangare/bt-final',
   resume: '/Srinivas_Kanagare_J_Resume.pdf',
-  headline: ['I build RAG and LLM systems', 'and ship them as products.'],
-  intro: 'I build practical AI applications using RAG pipelines, LLMs, machine learning, embeddings, APIs and modern web technologies.',
+  headline: ['I build AI systems from model to product.'],
+  intro: 'I develop practical AI applications using retrieval, embeddings, LLMs, machine learning, backend APIs, and modern web technologies.',
   about: [
-    'I am a Computer Science & Design graduate focused on AI/ML application development. My work combines RAG pipelines, LLM applications, machine learning, backend APIs and modern web development.',
-    'I enjoy turning ideas into working systems — from data processing and embeddings to retrieval, model inference, APIs, interfaces and deployment.',
+    'I’m a Computer Science & Design graduate focused on building AI-powered applications. My work spans Machine Learning, Generative AI, RAG systems, backend APIs, and full-stack development.',
+    'I enjoy building complete systems from data and model development to retrieval, LLM integration, APIs, and the final user experience.',
   ],
   cards: [
     ['RAG / LLM', 'Primary Focus'], ['Machine Learning', '88.75% MRI Classification'],
