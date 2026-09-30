@@ -1,6 +1,6 @@
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react'
 import { profile } from '../data/profile.js'
-import AISystemMap from './AISystemMap.jsx'
+import RAGPlayground from './RAGPlayground.jsx'
 export default function Hero() {
   return (
     <section id="home" className="hero container">
@@ -22,7 +22,7 @@ export default function Hero() {
           <img src="/images/srini.jpg" width="600" height="900" alt="Portrait of Srinivas Kanagare J" />
           <figcaption><strong>{profile.name}</strong><span>“Srini” · AI / ML Developer</span></figcaption>
         </figure>
-        <div className="map-card"><AISystemMap /></div>
+        <div className="map-card"><RAGPlayground /></div>
       </div>
     </section>
   )
