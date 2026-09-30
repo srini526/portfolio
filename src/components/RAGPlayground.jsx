@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Send, Square } from 'lucide-react'
 import { useReduced } from '../hooks.jsx'
-import { retrieve, suggestions, fallback } from '../data/playground.js'
+import { retrieve , fallback } from '../data/playground.js'
 
 const STAGES = ['Embed', 'Retrieve', 'Rank', 'Generate']
 const MAX_Q = 200
@@ -123,9 +123,9 @@ export default function RAGPlayground() {
         )}
       </div>
       <p className="sr" aria-live="polite">{turn && turn.done ? turn.answer : ''}</p>
-      <ul className="pg-chips">
+      {/* <ul className="pg-chips">
         {suggestions.map((s) => <li key={s}><button type="button" onClick={() => ask(s)}>{s}</button></li>)}
-      </ul>
+      </ul> */}
       <form className="pg-form" onSubmit={(e) => { e.preventDefault(); streaming ? stop() : ask(q) }}>
         <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Ask about Srinivas…" aria-label="Ask a question about Srinivas" maxLength={MAX_Q} />
         <button className="btn primary" type="submit" aria-label={streaming ? 'Stop answer' : 'Send question'}>{streaming ? <Square size={14} /> : <Send size={15} />}</button>
