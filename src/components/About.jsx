@@ -1,10 +1,12 @@
 import { profile } from '../data/profile.js'
 import { Reveal } from '../hooks.jsx'
 export default function About() {
+  const words = profile.about[0].split(' ')
   return (
-    <Reveal as="section" id="about" className="container sec">
-      <p className="eyebrow">01 · About</p><h2>Who is Srinivas?</h2>
-      <div className="about">{profile.about.map((t) => <p key={t}>{t}</p>)}</div>
-    </Reveal>
+    <section id="about" className="container sec">
+      <p className="eyebrow"><i />About</p>
+      <p className="big words" data-words style={{ '--n': words.length }}>{words.map((w, i) => <span className="w" key={i} style={{ '--i': i }}>{w} </span>)}</p>
+      <Reveal as="p" className="about2">{profile.about[1]}</Reveal>
+    </section>
   )
 }

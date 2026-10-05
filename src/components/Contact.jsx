@@ -1,34 +1,26 @@
 import { useState } from 'react'
-import { Mail, Github, Linkedin, FileText } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { profile } from '../data/profile.js'
 import { Reveal } from '../hooks.jsx'
 export default function Contact() {
   const [f, setF] = useState({ name: '', email: '', message: '' })
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value })
-  // No backend: this opens the visitor's email client with a pre-filled message.
-  const submit = (e) => {
-    e.preventDefault()
-    const body = `${f.message}\n\n— ${f.name} (${f.email})`
-    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent('Portfolio message from ' + f.name)}&body=${encodeURIComponent(body)}`
-  }
+  // No backend: opens the visitor's email app with the message pre-filled.
+  const submit = (e) => { e.preventDefault(); window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent('Portfolio message from ' + f.name)}&body=${encodeURIComponent(`${f.message}\n\n— ${f.name} (${f.email})`)}` }
   return (
-    <Reveal as="section" id="contact" className="container sec">
-      <p className="eyebrow">09 · Contact</p><h2>Let’s talk</h2>
+    <section id="contact" className="container sec">
+      <p className="eyebrow"><i />Contact</p>
+      <h2 className="huge">Let’s build <em>something.</em></h2>
+      <a className="mail" href={`mailto:${profile.email}`} data-cursor="Email">{profile.email} <ArrowUpRight size={28} /></a>
       <div className="contact">
-        <ul className="clinks">
-          <li><a href={`mailto:${profile.email}`}><Mail size={16} />{profile.email}</a></li>
-          <li><a href={profile.github} target="_blank" rel="noopener"><Github size={16} />GitHub</a></li>
-          <li><a href={profile.linkedin} target="_blank" rel="noopener"><Linkedin size={16} />LinkedIn</a></li>
-          <li><a href={profile.resume} target="_blank" rel="noopener"><FileText size={16} />Resume</a></li>
-        </ul>
-        <form onSubmit={submit}>
+        <ul className="clinks"><li><a href={profile.github} target="_blank" rel="noopener">GitHub ↗</a></li><li><a href={profile.linkedin} target="_blank" rel="noopener">LinkedIn ↗</a></li><li><a href={profile.resume} target="_blank" rel="noopener">Resume ↗</a></li></ul>
+        <Reveal as="form" onSubmit={submit} className="cform">
           <label>Name<input required value={f.name} onChange={set('name')} autoComplete="name" /></label>
           <label>Email<input required type="email" value={f.email} onChange={set('email')} autoComplete="email" /></label>
           <label>Message<textarea required rows="4" value={f.message} onChange={set('message')} /></label>
-          <button className="btn primary" type="submit">Compose email</button>
-          <small className="muted">Opens your email app with the message pre-filled.</small>
-        </form>
+          <button className="btn pop" type="submit">Compose email</button><small className="muted">Opens your email app with the message pre-filled.</small>
+        </Reveal>
       </div>
-    </Reveal>
+    </section>
   )
 }
