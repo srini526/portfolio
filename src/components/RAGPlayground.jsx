@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Send, Square } from 'lucide-react'
 import { useReduced } from '../hooks.jsx'
 import { retrieve , fallback } from '../data/playground.js'
+import { useNavigate } from 'react-router-dom'
 
 const STAGES = ['Embed', 'Retrieve', 'Rank', 'Generate']
 const MAX_Q = 200
@@ -25,6 +26,7 @@ async function streamChat(question, signal, onEvent) {
 
 export default function RAGPlayground() {
   const reduce = useReduced()
+  const nav = useNavigate()
   const [q, setQ] = useState('')
   const [live, setLive] = useState({ on: false, model: '' })
   const [turn, setTurn] = useState(null) // { question, stage, sources, answer, done, streaming, note }
@@ -113,6 +115,9 @@ export default function RAGPlayground() {
             <div className="msg bot">
               <p>{turn.answer || <span className="typing">retrieving…</span>}{streaming && turn.answer && <i className="caret" />}</p>
               {turn.note && <p className="note">{turn.note}</p>}
+              {turn.done && /^I (couldn.t|could not|cannot|can.t) find/i.test(turn.answer) && (
+                <button type="button" className="btn ghost sm nf-btn" onClick={() => nav('/#contact')}>Go to the contact form</button>
+              )}
               {turn.stage >= 1 && turn.sources.length > 0 && (
                 <ul className="srcs" aria-label="Retrieved sources">
                   {turn.sources.map((s, i) => <li key={s} style={{ '--k': i }}>{s}</li>)}
