@@ -42,6 +42,8 @@ export const profile = {
   linkedin: 'http://linkedin.com/in/srinivas-kangare/',
   ragRepo: 'https://github.com/srini526/RAG_Based_AI_Teaching_Assistant',
   kaggle: 'https://www.kaggle.com/code/srinivaskangare/bt-final',
+  researchRepo: 'https://github.com/srini526/Multi_Agent_AI_Research_System',
+  researchDemo: 'https://multi-agent-ai-research-system-jet.vercel.app/',
   resume: '/Srinivas_Kanagare_J_Resume.pdf',
   headline: ['I build RAG and LLM systems', 'and ship them as products.'],
   intro: 'I build practical AI applications using RAG pipelines, LLMs, machine learning, embeddings, APIs and modern web technologies.',

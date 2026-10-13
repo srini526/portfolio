@@ -33,6 +33,7 @@ export default function App() {
   const commands = [
     { label: 'Go to Home', hint: 'Page', run: () => nav('/') }, { label: 'View Featured Work', hint: 'Section', run: () => nav('/#work') },
     { label: 'Open RAG Case Study', hint: 'Page', run: () => nav('/projects/rag-assistant') }, { label: 'Open Brain Tumor Project', hint: 'Page', run: () => nav('/projects/brain-tumor') },
+    { label: 'Open Research Desk Project', hint: 'Page', run: () => nav('/projects/research-desk') },
     { label: 'Ask the Portfolio (live chat)', hint: 'Section', run: () => nav('/#ask') }, { label: 'View Skills', hint: 'Section', run: () => nav('/#skills') },
     { label: 'View Journey & Education', hint: 'Section', run: () => nav('/#journey') }, { label: 'View GitHub', hint: 'External', run: ext(profile.github) },
     { label: 'View Resume', hint: 'PDF', run: ext(profile.resume) }, { label: 'Contact Srinivas', hint: 'Section', run: () => nav('/#contact') },

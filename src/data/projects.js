@@ -21,6 +21,37 @@ export const rag = {
     ['What I Learned','How retrieval quality depends on transcription and chunking choices, how to wire local embedding models with a hosted LLM, and how to stream model output through a Flask API.'],
   ],
 }
+
+export const researchStages = [
+  ['01', 'Search Agent', 'Scout finds the sources'], ['02', 'Reader Agent', 'Bookworm scrapes the pages'],
+  ['03', 'Writer Chain', 'Scribbles drafts the report'], ['04', 'Critic Chain', 'Prof. Red reviews the draft'],
+]
+export const research = {
+  title: 'Research Desk — Multi-Agent AI Research System', slug: 'research-desk', category: 'Multi-Agent AI / LLM Application',
+  desc: 'A multi-agent system that turns a topic into a research report: a search agent finds sources, a reader agent scrapes them, a writer chain drafts the report and a critic chain reviews it. A FastAPI backend streams live progress to a React app.',
+  tech: ['Python', 'FastAPI', 'React', 'Tailwind CSS', 'LangChain', 'Tavily', 'BeautifulSoup', 'Groq', 'Cloudflare Workers AI', 'Multi-Agent', 'Docker'],
+  points: [
+    'Four cooperating stages: a search agent using the Tavily API, a reader agent that scrapes pages with BeautifulSoup, a writer chain and a critic chain.',
+    'FastAPI backend runs the pipeline in a worker thread and streams live agent output to the browser over Server-Sent Events.',
+    'React app with animated agent characters, a report that types itself out, and a PDF download.',
+    'Frontend deployed on Vercel and backend on Render. Safeguards include topic limits, one active run per IP and a cap on concurrent jobs.',
+  ],
+  flow: ['Topic', 'Search agent', 'Reader agent', 'Writer chain', 'Critic chain', 'Report'],
+  study: [
+    ['Problem', 'Researching a topic means searching, reading many pages and writing up the findings by hand. Research Desk automates that workflow with a small team of cooperating AI agents.'],
+    ['My Role', 'A solo project: Srinivas designed and built it end to end, from the agent pipeline and backend API to the React interface and deployment.'],
+    ['Approach', 'Instead of one big prompt, the work is split across four stages: a search agent finds sources through the Tavily search API, a reader agent scrapes the pages with BeautifulSoup, a writer chain drafts the report and a critic chain reviews the draft. The language models are called through the Groq API and Cloudflare Workers AI.'],
+    ['Architecture', 'The pipeline runs the four stages in order and returns the search results, the scraped pages, the report and the critic feedback. The animated diagram below shows the flow.'],
+    ['Backend', 'A FastAPI server wraps the pipeline. POST /api/research starts a run in a worker thread and returns a job id. A Server-Sent Events stream sends step markers, live agent output and the final result, and reconnects and resumes automatically. A separate endpoint builds the PDF download.'],
+    ['Safeguards', 'Topics must be 5 to 200 characters, each IP can have one active run at a time, and the server caps concurrent jobs (default 2).'],
+    ['Frontend', 'A React app built with Vite and Tailwind CSS. It shows a playful research lab where four animated characters work as the stages run: Scout (search), Bookworm (reader), Scribbles (writer) and Prof. Red (critic). The finished report types itself out and source cards can be dragged and clicked.'],
+    ['Deployment', 'The React frontend is deployed on Vercel and the FastAPI backend on Render. A Dockerfile is also included for single-container deployment.'],
+    ['Tech Stack', 'Python, FastAPI, Uvicorn, fpdf2, LangChain, React, Vite, Tailwind CSS and Server-Sent Events. Tavily API for web search, BeautifulSoup for scraping, and the Groq API and Cloudflare Workers AI for LLM calls.'],
+    ['Outcome', 'A working end-to-end research assistant that turns a topic into a report with critic feedback, with a live demo and public code. No usage numbers or accuracy figures are claimed.'],
+    ['What I Learned', 'Tool calling, designing an agent workflow and pipeline, web scraping, choosing the right model for each job, calling APIs reliably, and deploying a full-stack AI app.'],
+  ],
+}
+
 export const brain = {
   title: 'Brain Tumor Detection System', slug: 'brain-tumor', category: 'Deep Learning / Computer Vision',
   desc: 'A deep learning image classification system using transfer learning with InceptionV3 for brain tumor detection from MRI images. An academic computer-vision classification project, not a medical diagnostic tool.',

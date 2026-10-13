@@ -32,6 +32,22 @@ export const chunks = [
   { id: 'rag5', src: 'Project · RAG Assistant', tags: 'rag project debug debugging ollama qwen prompt prompting grounding hallucination local result outcome accuracy benchmark metrics',
     text: 'Along the way he debugged Ollama server and connection issues, experimented with qwen3:4b for local inference, and worked on RAG prompting and grounding so answers stay tied to the retrieved context. The project implements the complete RAG pipeline end to end; no accuracy or latency benchmarks are claimed.' },
 
+    // ---- Research Desk (multi-agent) ----
+  { id: 'rd0', src: 'Project · Research Desk', tags: 'research desk multi agent multiagent ai system project overview what does report topic',
+    text: 'Research Desk is a multi-agent AI research system that turns a topic into a research report. A search agent finds sources, a reader agent scrapes the pages, a writer chain drafts the report and a critic chain reviews it.' },
+  { id: 'rd1', src: 'Project · Research Desk', tags: 'research desk multi agent pipeline agents architecture how works search reader writer critic stages',
+    text: 'The pipeline runs four stages in order and returns the search results, the scraped pages, the report and the critic feedback. Splitting the work across specialised agents, instead of one big prompt, is the core idea.' },
+  { id: 'rd2', src: 'Project · Research Desk', tags: 'research desk backend fastapi api server sse streaming events pdf safeguards rate limit tech stack technologies docker',
+    text: 'A FastAPI backend wraps the pipeline: it starts a run in a worker thread and streams step markers, live agent output and the final result to the browser over Server-Sent Events, and it builds a PDF download. Safeguards include topic length limits, one active run per IP and a cap on concurrent jobs. A Dockerfile is included for single-container deployment.' },
+  { id: 'rd3', src: 'Project · Research Desk', tags: 'research desk frontend ui react tailwind vite demo live link github deployed vercel code',
+    text: 'The frontend is a React app built with Vite and Tailwind CSS, with animated agent characters that react as each stage runs and a report that types itself out. The frontend is deployed on Vercel and the backend on Render. The live demo is at multi-agent-ai-research-system-jet.vercel.app and the code is public at github.com/srini526/Multi_Agent_AI_Research_System.' },
+  { id: 'rd4', src: 'Project · Research Desk', tags: 'research desk result outcome status accuracy benchmark users metrics',
+    text: 'Research Desk works end to end and has a live demo and public code. No usage numbers, accuracy figures or benchmarks are claimed.' },
+  { id: 'rd5', src: 'Project · Research Desk', tags: 'research desk tavily beautifulsoup soup scraping scrape search llm groq cloudflare workers ai provider model api tools which use used tech stack technologies',
+    text: 'Research Desk uses the Tavily API for web search, BeautifulSoup for scraping the pages, LangChain, and the Groq API and Cloudflare Workers AI for its LLM calls.' },
+  { id: 'rd6', src: 'Project · Research Desk', tags: 'research desk role solo alone learned learn learning lessons taught skills gained deployment deploy hosting render vercel agent characters scout bookworm scribbles prof red',
+    text: 'Srinivas built Research Desk solo, end to end. Building it taught him tool calling, designing an agent workflow and pipeline, web scraping, choosing the right model for each job, calling APIs reliably and deploying a full-stack AI app. The interface has four animated characters: Scout (search), Bookworm (reader), Scribbles (writer) and Prof. Red (critic).' },
+
   // ---- Brain Tumor Detection ----
   { id: 'bt1', src: 'Project · Brain Tumor', tags: 'project build built mri brain tumor computer vision deep learning classes classify transfer what does',
     text: 'The Brain Tumor Detection System is a deep-learning image classifier that sorts brain MRI scans into Glioma, Meningioma, Pituitary Tumor and No Tumor using transfer learning with InceptionV3 (Python, TensorFlow, Keras). It is an academic computer-vision project, not a medical diagnostic tool.' },
@@ -71,12 +87,12 @@ export const chunks = [
   // ---- Skills ----
   { id: 'sk-ai', src: 'Resume · Skills', tags: 'skill skills technology tech stack ai ml',
     text: 'AI / ML skills: Machine Learning, Deep Learning, NLP, RAG, Embeddings, TensorFlow, Keras, InceptionV3, Scikit-learn, Sentence Transformers, Pandas and NumPy.' },
-  { id: 'sk-llm', src: 'Resume · Skills', tags: 'skill skills technology tech stack llm genai',
-    text: 'LLM / GenAI skills: LLM applications, RAG, Whisper, BGE-M3, Ollama, Groq, Llama, qwen3, Hugging Face and Prompt Engineering.' },
+  { id: 'sk-llm', src: 'Resume · Skills', tags: 'skill skills technology tech stack llm genai langchain langgraph agent agents multi agent tool calling',
+    text: 'LLM / GenAI skills: LLM applications, RAG, Whisper, BGE-M3, Ollama, Groq, Cloudflare Workers AI, Llama, qwen3, Hugging Face, Prompt Engineering, LangChain, LangGraph, multi-agent systems and tool calling.' },
   { id: 'sk-web', src: 'Resume · Skills', tags: 'skill skills technology tech stack backend frontend language programming web',
     text: 'Backend and web skills: Flask, FastAPI, Uvicorn, SQLAlchemy, REST APIs, React, Vite, Tailwind CSS, HTML5 and CSS3. Languages: Python, JavaScript, SQL, Java, Kotlin, Solidity, C++ and C.' },
   { id: 'sk-tools', src: 'Resume · Skills', tags: 'skill skills technology tech stack tools database sql',
-    text: 'Databases: SQLite, PostgreSQL, MySQL and MongoDB. Tools: Git, GitHub, Postman, Bitbucket and Linux / Ubuntu command line.' },
+    text: 'Databases: SQLite, PostgreSQL, MySQL and MongoDB. Tools: Git, GitHub, Postman, Bitbucket and Linux / Ubuntu command line, the Tavily search API and BeautifulSoup for web scraping.' },
   { id: 'dev1', src: 'Profile · Cloud & DevOps', tags: 'devops cloud docker github actions ci cd pipeline deployment automation dockerfile hub container',
     text: 'Srinivas has hands-on practice with Docker (writing Dockerfiles, building images, debugging build issues, pushing to Docker Hub) and has learned GitHub Actions workflow YAML for Docker-based automation and deployment pipelines. His Docker and GitHub Actions practice repositories are public on GitHub.' },
   { id: 'dev2', src: 'Profile · Cloud & DevOps', tags: 'devops cloud kubernetes minikube kubectl aws s3 cloudfront ec2 nginx deploy deployment infrastructure',

@@ -1822,3 +1822,20 @@ textarea:focus {
 }
 
 .nf-btn{margin-top:10px}
+
+.shot {
+    margin: 48px 0 0
+}
+
+.shot img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--r);
+    border: 1px solid var(--line)
+}
+
+.shot figcaption {
+    font: .78rem var(--mono);
+    color: var(--mu);
+    margin-top: 10px
+}
