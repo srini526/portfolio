@@ -69,7 +69,15 @@ export const brain = {
 export const secondary = [
   { title: 'LaptopLens', status: 'In progress', cats: ['AI', 'Full-Stack', 'DevOps'], tech: ['FastAPI', 'PostgreSQL', 'Groq', 'Docker', 'Kubernetes', 'React', 'Vite', 'Tailwind CSS'],
     desc: 'An AI laptop recommendation platform. A natural-language query is interpreted with Groq, matched against Flipkart and Amazon laptop listings in PostgreSQL, ranked, and explained. The FastAPI backend runs with Docker and Kubernetes; the React frontend is in progress.', links: [] },
-  
+    
+  { title: 'Hinglish Script Writer', cats: ['AI'], tech: ['Python', 'Streamlit', 'LangGraph', 'Groq', 'gpt-oss-20b'],
+    desc: 'A three-stage LangGraph workflow that turns raw text into a ready-to-speak Hinglish video script: a copyeditor cleans the text, a scriptwriter makes it engaging, and a translator localizes it into natural Hinglish. A Streamlit app shows live progress and lets you download each stage.',
+    links: [['Live demo', 'https://hinglish-script-writer.streamlit.app/'], ['GitHub', 'https://github.com/srini526/Hinglish_script_writer']] },
+
+  { title: 'Content Safety Analyzer', cats: ['AI'], tech: ['Python', 'Streamlit', 'LangGraph', 'Groq'],
+    desc: 'A Streamlit app that scores text from 0 to 100 for toxicity and hate speech, copyright risk and cultural sensitivity using a LangGraph workflow and Groq. Scores are model estimates, not legal advice or moderation decisions, and the report can be downloaded.',
+    links: [['Live demo', 'https://content-safety-analyzer.streamlit.app/'], ['GitHub', 'https://github.com/srini526/Content_saftety_analyzer']] },
+
   { title: 'Blockchain Land Registry System', cats: ['Full-Stack'], tech: ['Solidity', 'Ethereum', 'React'],
     desc: 'A blockchain-based land registry application with Solidity smart contracts and a React frontend. Presented at NCASET 2025.', links: [['GitHub (fork)', 'https://github.com/srini526/FinalYearProject-LandRegistry']] },
 

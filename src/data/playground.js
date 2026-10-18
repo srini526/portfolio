@@ -67,6 +67,13 @@ export const chunks = [
     text: 'The agent has been tested with natural-language queries such as "coding laptop under 70k with H processor" and produced structured tool calls for laptop search. The hardest part is making the agent interpret ambiguous human requirements as structured search parameters rather than only a conversational answer. No accuracy or benchmark numbers are claimed.' },
 
   // ---- Other projects ----
+
+  { id: 'hinglish', src: 'Project · Hinglish Script Writer', tags: 'project hinglish script writer script studio streamlit langgraph groq copyeditor scriptwriter translator video script hindi english side project demo',
+    text: 'Hinglish Script Writer is a Streamlit side project built on a three-stage LangGraph workflow with Groq. A copyeditor cleans up the raw text, a scriptwriter turns it into an engaging video script, and a translator adapts it into natural Hinglish. It shows live progress and lets users download each stage. It has a live demo at hinglish-script-writer.streamlit.app and public code at github.com/srini526/Hinglish_script_writer.' },
+    
+  { id: 'safety', src: 'Project · Content Safety Analyzer', tags: 'project content safety analyzer streamlit langgraph groq toxicity hate speech copyright cultural sensitivity moderation score side project demo',
+    text: 'Content Safety Analyzer is a Streamlit side project using LangGraph and Groq. It analyses text across three areas, toxicity and hate speech, copyright risk and cultural sensitivity, and gives each a score out of 100. The scores are model estimates, not legal advice or moderation decisions. It has a live demo at content-safety-analyzer.streamlit.app and public code at github.com/srini526/Content_saftety_analyzer.' },
+
   { id: 'land', src: 'Project · Land Registry', tags: 'project blockchain land registry solidity smart contract react ethereum ncaset conference web3 role problem tamper',
     text: 'The Blockchain Land Registry System is a blockchain-based land registry application meant to give a transparent, tamper-resistant record of land ownership; traditional land records can suffer from limited transparency, centralized control and tampering. Srinivas worked on the smart contract and frontend using Solidity and React, and the project was presented at NCASET 2025.' },
   { id: 'mock', src: 'Project · Mock Test Platform', tags: 'project mock test platform exam quiz flask sqlalchemy sqlite sentence transformer nlp semantic fullstack role',
