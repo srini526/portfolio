@@ -128,7 +128,7 @@ export const profile = {
   kaggle: 'https://www.kaggle.com/code/srinivaskangare/bt-final',
   researchRepo: 'https://github.com/srini526/Multi_Agent_AI_Research_System',
   researchDemo: 'https://multi-agent-ai-research-system-jet.vercel.app/',
-  resume: '/Srinivas_Kanagare_J_Resume.pdf',
+  resume: 'https://drive.google.com/file/d/13H4_M6eminoojg_9aoUna3PPvuRtq-gR/view?usp=sharing',
   headline: ['I build RAG and LLM systems', 'and ship them as products.'],
   intro: 'I build practical AI applications using RAG pipelines, LLMs, machine learning, embeddings, APIs and modern web technologies.',
   about: [

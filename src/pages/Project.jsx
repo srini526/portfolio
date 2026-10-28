@@ -27,6 +27,12 @@ export default function Project() {
             <a className='btn ghost' href={profile.ragDemo} target="_blank" rel="noopener">Live demo <ArrowUpRight size={16} /></a>
           </>
         ) }
+        {isRag && (
+          <figure className='shot'>
+            <img src='\images\rag-ai-notebook-screenshot.webp'width="2000" height="550" alt="RAG-Based AI Notebook interface showing source uploads, AI-powered question answering with citations, and study tools."/>
+            <figcaption>RAG-Based AI Notebook — Interactive workspace for source-grounded Q&A and AI-powered study materials.</figcaption>
+          </figure>
+        )}
         {isResearch && (
           <>
             <a className="btn pop" href={profile.researchDemo} target="_blank" rel="noopener">Live demo <ArrowUpRight size={16} /></a>
