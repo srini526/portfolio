@@ -19,18 +19,42 @@ export const chunks = [
     text: 'Srinivas presented his work at two national conferences in 2025: the brain tumor detection project at ICETSE 2025 and the blockchain land registry project at NCASET 2025.' },
 
   // ---- RAG-Based AI Teaching Assistant ----
-  { id: 'rag0', src: 'Project · RAG Assistant', tags: 'rag project overview assistant teaching lecture what does pipeline flagship',
-    text: 'The RAG-Based AI Teaching Assistant lets users ask questions about lecture content and get answers grounded in the lecture material. It processes lecture videos, converts them into searchable knowledge, retrieves relevant content and uses an LLM to generate context-aware responses.' },
-  { id: 'rag1', src: 'Project · RAG Assistant', tags: 'rag project pipeline architecture flow stages how works build built',
-    text: 'The pipeline is: lecture video, FFmpeg, audio, Whisper Large-v3, structured transcript, chunks, BGE-M3 embeddings via Ollama, semantic retrieval with cosine similarity, then Llama 3.1 through Groq generates the answer. A Flask REST API streams the response.' },
-  { id: 'rag2', src: 'Project · RAG Assistant', tags: 'rag project retrieval embedding semantic search cosine similarity joblib',
-    text: 'The question is embedded with BGE-M3 and compared with the transcript chunk embeddings by cosine similarity, and the embeddings are stored with joblib. The best-matching chunks become the context for the LLM.' },
-  { id: 'rag3', src: 'Project · RAG Assistant', tags: 'rag project role solo problem solves why purpose',
-    text: 'It is a solo project: Srinivas designed and built it end to end. It solves a real problem: students have lots of lecture video but no convenient way to ask questions about that specific material, so the system turns long-form lectures into an interactive question-answering tool.' },
-  { id: 'rag4', src: 'Project · RAG Assistant', tags: 'rag project hardest challenge difficult problem tech stack technologies',
-    text: 'The hardest part was designing the pipeline so that unstructured lecture video becomes structured, searchable knowledge that can be reliably retrieved as context for the LLM. Tech: Python, Flask, Whisper Large-v3, FFmpeg, BGE-M3, Ollama, Groq, Llama 3.1 and JSON-based transcript and chunk processing.' },
-  { id: 'rag5', src: 'Project · RAG Assistant', tags: 'rag project debug debugging ollama qwen prompt prompting grounding hallucination local result outcome accuracy benchmark metrics',
-    text: 'Along the way he debugged Ollama server and connection issues, experimented with qwen3:4b for local inference, and worked on RAG prompting and grounding so answers stay tied to the retrieved context. The project implements the complete RAG pipeline end to end; no accuracy or latency benchmarks are claimed.' },
+  {
+    id: 'rag0',
+    src: 'Project · RAG AI Notebook',
+    tags: 'rag project overview notebook assistant documents knowledge study',
+    text: 'The RAG-Based AI Notebook is an AI-powered knowledge workspace that lets users upload learning materials, ask questions grounded in their sources, and generate study resources. It combines Retrieval-Augmented Generation with agentic workflows to make information easier to search, understand, and organize.'
+  },
+  {
+    id: 'rag1',
+    src: 'Project · RAG AI Notebook',
+    tags: 'rag project pipeline architecture workflow ingestion retrieval generation',
+    text: 'The application follows a pipeline that ingests documents and other supported sources, extracts and chunks content, generates embeddings, retrieves relevant passages, and uses a language model to produce context-aware answers. LangGraph coordinates selected ingestion and conversational workflows, while the React frontend communicates with the Flask REST API.'
+  },
+  {
+    id: 'rag2',
+    src: 'Project · RAG AI Notebook',
+    tags: 'rag project retrieval embeddings FAISS BGE-M3 semantic search citations',
+    text: 'The notebook uses BGE-M3 embeddings through Cloudflare Workers AI and FAISS for vector-based retrieval. Relevant passages are selected as context for answer generation, with source citations to help users verify information against their original materials.'
+  },
+  {
+    id: 'rag3',
+    src: 'Project · RAG AI Notebook',
+    tags: 'rag project role solo problem purpose study studio flashcards quizzes summaries',
+    text: 'It is a solo project designed and developed end to end by Srinivas. It addresses the difficulty of finding specific information across large collections of learning materials. Beyond question answering, the application includes a Study Studio for generating learning resources such as study guides, FAQs, flashcards, quizzes, timelines, and mind maps.'
+  },
+  {
+    id: 'rag4',
+    src: 'Project · RAG AI Notebook',
+    tags: 'rag project hardest challenge technologies tech stack React Vite Flask LangChain LangGraph Cloudflare Groq Whisper',
+    text: 'The main engineering challenge is transforming different source formats into searchable knowledge while maintaining reliable retrieval, source attribution, and consistent responses. The technology stack includes Python, Flask, React, Vite, Tailwind CSS, LangChain, LangGraph, FAISS, BGE-M3 embeddings through Cloudflare Workers AI, Groq language models, and Whisper for transcription.'
+  },
+  {
+    id: 'rag5',
+    src: 'Project · RAG AI Notebook',
+    tags: 'rag project deployment debugging streaming persistence database production frontend backend live demo GitHub',
+    text: 'The project integrates a React frontend with a Flask backend, streams responses using Server-Sent Events, and supports persistent notebook data and chat history. The application is deployed at https://ragbasedainotebook.vercel.app/. Source code: https://github.com/srini526/RAG_Based_AI_Notebook. The implementation focuses on source-grounded answers and a complete knowledge-workspace experience; no unverified accuracy or latency benchmarks are claimed.'
+  },
 
     // ---- Research Desk (multi-agent) ----
   { id: 'rd0', src: 'Project · Research Desk', tags: 'research desk multi agent multiagent ai system project overview what does report topic',

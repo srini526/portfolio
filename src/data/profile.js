@@ -1,24 +1,107 @@
 export const ragStages = [
-  ['01','Lecture Video','Source content'], ['02','FFmpeg','Audio extraction'], ['03','Whisper Large-v3','Transcription'],
-  ['04','Structured JSON','Timestamped text'], ['05','Chunking','Semantic segments'], ['06','BGE-M3 Embeddings','Run via Ollama'],
-  ['07','Semantic Retrieval','Query ↔ chunks'], ['08','Llama 3.1 via Groq','Answer generation'],
+  ['01', 'Source Ingestion', 'Documents, media and web'],
+  ['02', 'Content Extraction', 'Extract text and audio'],
+  ['03', 'Text Processing', 'Clean and normalize content'],
+  ['04', 'Chunking', 'Searchable text segments'],
+  ['05', 'BGE-M3 Embeddings', 'Cloudflare Workers AI'],
+  ['06', 'FAISS Indexing', 'Vector-based knowledge search'],
+  ['07', 'LangGraph RAG', 'Retrieve relevant context'],
+  ['08', 'LLM via Groq', 'Grounded answers with citations'],
 ]
+
 export const rag = {
-  title: 'RAG-Based AI Teaching Assistant', slug: 'rag-assistant', category: 'RAG / LLM / AI Application',
-  desc: 'An AI teaching assistant that converts lecture videos into searchable knowledge and answers questions using Retrieval-Augmented Generation.',
-  tech: ['Python','Flask','FFmpeg','Whisper Large-v3','BGE-M3','Ollama','Groq','Llama 3.1','Embeddings','Semantic Retrieval'],
-  points: ['Groq-hosted LLMs generate context-aware answers from educational content.','Semantic embedding and retrieval pipeline built with Ollama matches user queries to relevant content.','Video/audio processed with Whisper and semantic chunking into a searchable knowledge base.','Flask REST APIs stream LLM responses, combining retrieval, context generation and real-time answers.'],
-  query: [['User query','Question embedded with BGE-M3'],['Retrieval','Semantic match against lecture chunks'],['Relevant context','Top-matching transcript segments'],['LLM','Llama 3.1 via Groq'],['Answer','Streamed back through a Flask REST API']],
+  title: 'RAG-Based AI Notebook',
+  slug: 'rag-assistant',
+  category: 'RAG / LLM / Agentic AI',
+
+  desc: 'An AI-powered knowledge workspace that transforms documents, lecture materials and other supported sources into searchable knowledge, answers questions with source citations, and generates personalized study resources.',
+
+  tech: [
+    'Python',
+    'Flask',
+    'React',
+    'Vite',
+    'Tailwind CSS',
+    'LangChain',
+    'LangGraph',
+    'FAISS',
+    'BGE-M3',
+    'Cloudflare Workers AI',
+    'Groq',
+    'Whisper',
+    'SQLAlchemy',
+    'SQLite',
+    'PostgreSQL',
+    'Server-Sent Events',
+  ],
+
+  points: [
+    'Multi-source ingestion processes supported documents, audio, video, YouTube links and web content.',
+    'BGE-M3 embeddings through Cloudflare Workers AI power semantic search using FAISS.',
+    'LangGraph coordinates retrieval and answer-generation workflows, with retrieval refinement when needed.',
+    'Source-grounded answers include citations that help users verify information against original materials.',
+    'Study Studio generates study guides, FAQs, flashcards, quizzes, timelines and mind maps.',
+    'React frontend integrates with a Flask REST API and streams responses using Server-Sent Events.',
+  ],
+
+  query: [
+    ['User query', 'Ask a question about notebook sources'],
+    ['Query processing', 'Prepare the question for retrieval'],
+    ['Semantic retrieval', 'Find relevant passages using FAISS'],
+    ['Context assembly', 'Collect the best-matching source passages'],
+    ['LLM generation', 'Generate an answer using retrieved context'],
+    ['Answer', 'Return the response with source citations'],
+  ],
+
   study: [
-    ['Problem','Lecture videos are hard to search. A student with a specific question has to scrub through recordings to find the relevant explanation.'],
-    ['Approach','Turn the video into text, index it semantically, and let a language model answer questions using only the retrieved lecture context.'],
-    ['Architecture','An eight-stage pipeline from lecture video to a generated answer, shown in the animated diagram below.'],
-    ['Data Flow','FFmpeg extracts audio, Whisper Large-v3 transcribes it, and the transcript is stored as structured JSON. The JSON is chunked, and each chunk is embedded with BGE-M3.'],
-    ['Retrieval','The user query is embedded and matched against the chunk embeddings by semantic similarity. The best-matching chunks become the context for the answer.'],
-    ['LLM','The retrieved context and question are sent to Llama 3.1 through Groq. A Flask REST API streams the response back. Ollama is used in the embedding/model workflow; the stages use different models.'],
-    ['Tech Stack','Python, Flask, FFmpeg, Whisper Large-v3, BGE-M3, Ollama, Groq, Llama 3.1, Scikit-learn, Joblib, NumPy, Pandas, React.'],
-    ['Outcome','A working end-to-end pipeline that turns lecture video into a question-answering assistant. No production deployment, user counts or benchmarks are claimed.'],
-    ['What I Learned','How retrieval quality depends on transcription and chunking choices, how to wire local embedding models with a hosted LLM, and how to stream model output through a Flask API.'],
+    [
+      'Problem',
+      'Finding specific information across multiple documents, lecture materials and web pages can be time-consuming. General-purpose AI responses may also lack clear grounding in the user’s own sources.',
+    ],
+    [
+      'Approach',
+      'Create an AI knowledge workspace that ingests supported content, indexes it for semantic retrieval, and uses relevant passages to answer questions and generate learning materials.',
+    ],
+    [
+      'Architecture',
+      'The application combines a React and Vite frontend, Flask REST API, content-ingestion workflows, BGE-M3 embeddings, FAISS retrieval, LangChain integrations and LangGraph orchestration.',
+    ],
+    [
+      'Data Flow',
+      'Source content is extracted and processed into text chunks. BGE-M3 generates embeddings through Cloudflare Workers AI, and FAISS indexes the vectors for efficient similarity-based retrieval.',
+    ],
+    [
+      'Retrieval',
+      'A user query is used to retrieve relevant passages from the indexed knowledge base. The selected context is passed to the language model to support source-grounded answers.',
+    ],
+    [
+      'Agentic Workflow',
+      'LangGraph coordinates selected ingestion and conversational workflows. Where configured, retrieval can be evaluated and queries refined before answer generation.',
+    ],
+    [
+      'LLM Integration',
+      'Groq provides language-model inference, while Cloudflare Workers AI handles BGE-M3 embeddings. Whisper supports audio transcription. These services work together with the retrieval pipeline to support the notebook experience.',
+    ],
+    [
+      'Study Studio',
+      'The application generates learning resources from notebook content, including briefing documents, study guides, FAQs, timelines, mind maps, flashcards and quizzes.',
+    ],
+    [
+      'Tech Stack',
+      'Python, Flask, React, Vite, Tailwind CSS, LangChain, LangGraph, FAISS, BGE-M3, Cloudflare Workers AI, Groq, Whisper, SQLAlchemy, SQLite, PostgreSQL and Server-Sent Events.',
+    ],
+    [
+      'Deployment',
+      'Live application: https://ragbasedainotebook.vercel.app/. GitHub repository: https://github.com/srini526/RAG_Based_AI_Notebook. The frontend is hosted on Vercel and connects to a Flask backend.',
+    ],
+    [
+      'Outcome',
+      'An end-to-end AI knowledge workspace combining source ingestion, semantic retrieval, question answering with citations and AI-generated study materials. No unverified performance benchmarks are claimed.',
+    ],
+    [
+      'What I Learned',
+      'Building RAG pipelines, integrating embedding and LLM providers, orchestrating workflows with LangGraph, connecting React to Flask, streaming model responses and maintaining source context throughout answer generation.',
+    ],
   ],
 }
 export const brain = {
@@ -40,7 +123,8 @@ export const profile = {
   email: 'kangaresrinivas@gmail.com',
   github: 'https://github.com/srini526',
   linkedin: 'http://linkedin.com/in/srinivas-kangare/',
-  ragRepo: 'https://github.com/srini526/RAG_Based_AI_Teaching_Assistant',
+  ragRepo: 'https://github.com/srini526/RAG_Based_AI_Notebook',
+  ragDemo:'https://ragbasedainotebook.vercel.app/',
   kaggle: 'https://www.kaggle.com/code/srinivaskangare/bt-final',
   researchRepo: 'https://github.com/srini526/Multi_Agent_AI_Research_System',
   researchDemo: 'https://multi-agent-ai-research-system-jet.vercel.app/',

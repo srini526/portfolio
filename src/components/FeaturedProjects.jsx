@@ -24,7 +24,7 @@ export default function FeaturedProjects({ onCase }) {
   return (
     <>
       <Reveal as="section" id="projects" className="container sec">
-        <p className="eyebrow">02 · Featured work</p><h2>Two projects, end to end</h2>
+        <p className="eyebrow">02 · Featured work</p><h2>AI projects, end to end</h2>
         <div className="feat">
           <article className="fcard glow">
             <div className="fleft">
@@ -57,7 +57,7 @@ export default function FeaturedProjects({ onCase }) {
         </div>
       </Reveal>
       <Reveal as="section" id="architecture" className="container sec">
-        <p className="eyebrow">03 · RAG architecture</p><h2>How the teaching assistant works</h2>
+        <p className="eyebrow">03 · RAG architecture</p><h2>ow the AI Notebook work</h2>
         <RAGPipeline />
       </Reveal>
     </>

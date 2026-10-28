@@ -21,7 +21,12 @@ export default function Project() {
       <h1 className="ptitle">{p.title}</h1>
       <p className="plead">{p.desc}</p>
       <div className="cta">
-        {isRag && <a className="btn pop" href={profile.ragRepo} target="_blank" rel="noopener"><Github size={15} />View on GitHub</a>}
+        {isRag && ( 
+          <>
+            <a className="btn pop" href={profile.ragRepo} target="_blank" rel="noopener"><Github size={15} />View on GitHub</a> 
+            <a className='btn ghost' href={profile.ragDemo} target="_blank" rel="noopener">Live demo <ArrowUpRight size={16} /></a>
+          </>
+        ) }
         {isResearch && (
           <>
             <a className="btn pop" href={profile.researchDemo} target="_blank" rel="noopener">Live demo <ArrowUpRight size={16} /></a>

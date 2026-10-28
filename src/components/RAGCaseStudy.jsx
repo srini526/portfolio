@@ -5,7 +5,7 @@ import { rag } from '../data/projects.js'
 import { profile } from '../data/profile.js'
 export default function RAGCaseStudy({ open, onClose }) {
   return (
-    <Modal open={open} onClose={onClose} label="RAG-Based AI Teaching Assistant case study" className="case">
+    <Modal open={open} onClose={onClose} label="RAG-Based AI Notebook" className="case">
       <p className="eyebrow">Case study · {rag.category}</p>
       <h2>{rag.title}</h2>
       {rag.study.map(([h, t]) => (

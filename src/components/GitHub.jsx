@@ -6,7 +6,7 @@ export default function GitHub() {
     <Reveal as="section" id="github" className="container sec">
       <p className="eyebrow">08 · GitHub & resume</p>
       <div className="gh">
-        <div><h3>Code lives on GitHub</h3><p>Browse the RAG teaching assistant and other repositories.</p></div>
+        <div><h3>Code lives on GitHub</h3><p>Browse the RAG assistant and other repositories.</p></div>
         <div className="cta">
           <a className="btn primary" href={profile.github} target="_blank" rel="noopener"><Gh size={15} />View GitHub Profile</a>
           <a className="btn ghost" href={profile.resume} target="_blank" rel="noopener"><FileText size={15} />View Resume</a>
